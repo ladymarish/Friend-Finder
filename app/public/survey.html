@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>FriendsFinder | Survey</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  <!-- Super cool drop down library!! -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+  <style>
+    .container, form, h5, h4 {
+    	margin-top: 25px;}
+    h3, h4 {
+    	margin-bottom:15px;}
+    label { 
+    	display: block;
+    	margin-left: 15px;}
+    input {
+     	margin-right:15px;}
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+ <h2>Stop living like a loser - find yourself a friend.</h2>
+ <hr>
+
+ <h3><strong>About You</strong></h3>
+ <h5>Name <span style="color:red">*</span></h5>
+ <input type="text" id="name" class="form-control" required>
+ <h5>Link to Photo Image <span style="color:red">*</span></h5>
+ <input type="text" id="photo" class="form-control" required>
+ <hr>
+
+
+<!-- theQuestions -->
+<form>
+ <div class="question">
+  <h4>1) You accept people for who they are even if their worldview is fundamentally different than yours</h4>
+   <label><input type="radio" value="1" name="one">Strongly Disagree</label>
+   <label><input type="radio" value="2" name="one">Somewhat Disagree</label>
+   <label><input type="radio" value="3" name="one">Not Sure</label>
+   <label><input type="radio" value="4" name="one">Strongly Agree</label>
+   <label><input type="radio" value="4" name="one">Strongly Disagree</label>
+  </div>
+
+ <div class="question">
+  <h4>2) You consider yourself to be a creative individual</h4>
+   <label><input type="radio" value="1" name="two">Strongly Disagree</label>
+   <label><input type="radio" value="2" name="two">Somewhat Disagree</label>
+   <label><input type="radio" value="3" name="two">Not Sure</label>
+   <label><input type="radio" value="4" name="two">Strongly Agree</label>
+   <label><input type="radio" value="4" name="two">Strongly Disagree</label>
+  </div>
+
+ <div class="question">
+  <h4>3) You are sensitive to criticism</h4>
+   <label><input type="radio" value="1" name="three">Strongly Disagree</label>
+   <label><input type="radio" value="2" name="three">Somewhat Disagree</label>
+   <label><input type="radio" value="3" name="three">Not Sure</label>
+   <label><input type="radio" value="4" name="three">Strongly Agree</label>
+   <label><input type="radio" value="4" name="three">Strongly Disagree</label>
+  </div>
+    
+ <div class="question">
+  <h4>4) You feel like you can click with pretty much anyone</h4>
+   <label><input type="radio" value="1" name="four">Strongly Disagree</label>
+   <label><input type="radio" value="2" name="four">Somewhat Disagree</label>
+   <label><input type="radio" value="3" name="four">Not Sure</label>
+   <label><input type="radio" value="4" name="four">Strongly Agree</label>
+   <label><input type="radio" value="4" name="four">Strongly Disagree</label>
+  </div>
+
+ <div class="question">
+  <h4>5) You are willing to challenge status quo and take risks</h4>
+   <label><input type="radio" value="1" name="five">Strongly Disagree</label>
+   <label><input type="radio" value="2" name="five">Somewhat Disagree</label>
+   <label><input type="radio" value="3" name="five">Not Sure</label>
+   <label><input type="radio" value="4" name="five">Strongly Agree</label>
+   <label><input type="radio" value="4" name="five">Strongly Disagree</label>
+  </div>
+
+ <div class="question">
+  <h4>6) Your ideal Friday night is a movie marathon on Netflix</h4>
+   <label><input type="radio" value="1" name="six">Strongly Disagree</label>
+   <label><input type="radio" value="2" name="six">Somewhat Disagree</label>
+   <label><input type="radio" value="3" name="six">Not Sure</label>
+   <label><input type="radio" value="4" name="six">Strongly Agree</label>
+   <label><input type="radio" value="4" name="six">Strongly Disagree</label>
+  </div>
+
+ <div class="question">
+  <h4>7) You will support your friend even if you feel like they are making bad choices</h4>
+   <label><input type="radio" value="1" name="seven">Strongly Disagree</label>
+   <label><input type="radio" value="2" name="seven">Somewhat Disagree</label>
+   <label><input type="radio" value="3" name="seven">Not Sure</label>
+   <label><input type="radio" value="4" name="seven">Strongly Agree</label>
+   <label><input type="radio" value="4" name="seven">Strongly Disagree</label>
+  </div>
+
+ <div class="question">
+  <h4>8) You can easily form a platonic friendship with the member of an opposite sex</h4>
+   <label><input type="radio" value="1" name="eight">Strongly Disagree</label>
+   <label><input type="radio" value="2" name="eight">Somewhat Disagree</label>
+   <label><input type="radio" value="3" name="eight">Not Sure</label>
+   <label><input type="radio" value="4" name="eight">Strongly Agree</label>
+   <label><input type="radio" value="4" name="eight">Strongly Disagree</label>
+  </div>
+
+  <div class="question">
+  <h4>9) You'd rather make new friends through your hobbies</h4>
+   <label><input type="radio" value="1" name="nine">Strongly Disagree</label>
+   <label><input type="radio" value="2" name="nine">Somewhat Disagree</label>
+   <label><input type="radio" value="3" name="nine">Not Sure</label>
+   <label><input type="radio" value="4" name="nine">Strongly Agree</label>
+   <label><input type="radio" value="4" name="nine">Strongly Disagree</label>
+  </div>
+
+  <div class="question">
+  <h4>10) You fall easily under peer pressure</h4>
+   <label><input type="radio" value="1" name="ten">Strongly Disagree</label>
+   <label><input type="radio" value="2" name="ten">Somewhat Disagree</label>
+   <label><input type="radio" value="3" name="ten">Not Sure</label>
+   <label><input type="radio" value="4" name="ten">Strongly Agree</label>
+   <label><input type="radio" value="4" name="ten">Strongly Disagree</label>
+  </div>
+
+   <br>
+   <br>
+
+   <button type="submit" class="btn btn-primary btn-lg" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i> Submit</button>
+
+   <br>
+   <br>
+
+   <hr>
+   <footer class="footer">
+     <div class="container">
+       <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/ladymarish/Friend-Finder">GitHub Repo</a></p>
+     </div>
+   </footer>
+
+</form>
+</div>
+</body>
+</html>
