@@ -14,40 +14,71 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
   <style>
     .container, form, h5, h4 {
-    	margin-top: 25px;}
+    	margin-top: 25px;
+    }
     h3, h4 {
-    	margin-bottom:15px;}
+    	margin-bottom:15px;
+    }
     label { 
     	display: block;
-    	margin-left: 15px;}
+    	margin-left: 15px;
+    }
     input {
-     	margin-right:15px;}
+     	margin-right:15px;
+    }
+    #myModal img {
+      margin:0 auto 30px;
+      display:block;
+      max-width:300px;
+    }
+    .modal-body p {
+      text-align:center;
+      font-size:30px;
+      margin-top:25px;
+    }
+    .modal-title {
+      color:#696969;
+    }
+    .modal-body {
+      padding:0 100px;
+    }
+    .modal:before {
+      content: '';
+      height: 100%;
+      width: 1px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .modal .modal-dialog {
+      text-align: left;
+      margin: 10px auto;
+      display: inline-block;
+      vertical-align: middle;
+    }
   </style>
 </head>
 
 <body>
 
 <div class="container">
- <h2>Stop living like a loser - find yourself a friend.</h2>
- <hr>
-
- <h3><strong>About You</strong></h3>
- <h5>Name <span style="color:red">*</span></h5>
- <input type="text" id="name" class="form-control" required>
- <h5>Link to Photo Image <span style="color:red">*</span></h5>
- <input type="text" id="photo" class="form-control" required>
+ <h2>Find a Friend</h2> 
  <hr>
 
 
 <!-- theQuestions -->
 <form>
+ <h3><strong>About You</strong></h3>
+ <h5>Name <span style="color:red">*</span></h5>
+ <input type="text" id="name" class="form-control" required>
+ <h5>Link to Photo Image <span style="color:red">*</span></h5>
+ <input type="text" id="photo" class="form-control" required>
  <div class="question">
   <h4>1) You accept people for who they are even if their worldview is fundamentally different than yours</h4>
    <label><input type="radio" value="1" name="one">Strongly Disagree</label>
    <label><input type="radio" value="2" name="one">Somewhat Disagree</label>
    <label><input type="radio" value="3" name="one">Not Sure</label>
    <label><input type="radio" value="4" name="one">Strongly Agree</label>
-   <label><input type="radio" value="4" name="one">Strongly Disagree</label>
+   <label><input type="radio" value="5" name="one">Strongly Disagree</label>
   </div>
 
  <div class="question">
@@ -56,7 +87,7 @@
    <label><input type="radio" value="2" name="two">Somewhat Disagree</label>
    <label><input type="radio" value="3" name="two">Not Sure</label>
    <label><input type="radio" value="4" name="two">Strongly Agree</label>
-   <label><input type="radio" value="4" name="two">Strongly Disagree</label>
+   <label><input type="radio" value="5" name="two">Strongly Disagree</label>
   </div>
 
  <div class="question">
@@ -65,16 +96,16 @@
    <label><input type="radio" value="2" name="three">Somewhat Disagree</label>
    <label><input type="radio" value="3" name="three">Not Sure</label>
    <label><input type="radio" value="4" name="three">Strongly Agree</label>
-   <label><input type="radio" value="4" name="three">Strongly Disagree</label>
+   <label><input type="radio" value="5" name="three">Strongly Disagree</label>
   </div>
     
- <div class="question">
+ <!-- <div class="question">
   <h4>4) You feel like you can click with pretty much anyone</h4>
    <label><input type="radio" value="1" name="four">Strongly Disagree</label>
    <label><input type="radio" value="2" name="four">Somewhat Disagree</label>
    <label><input type="radio" value="3" name="four">Not Sure</label>
    <label><input type="radio" value="4" name="four">Strongly Agree</label>
-   <label><input type="radio" value="4" name="four">Strongly Disagree</label>
+   <label><input type="radio" value="5" name="four">Strongly Disagree</label>
   </div>
 
  <div class="question">
@@ -83,7 +114,7 @@
    <label><input type="radio" value="2" name="five">Somewhat Disagree</label>
    <label><input type="radio" value="3" name="five">Not Sure</label>
    <label><input type="radio" value="4" name="five">Strongly Agree</label>
-   <label><input type="radio" value="4" name="five">Strongly Disagree</label>
+   <label><input type="radio" value="5" name="five">Strongly Disagree</label>
   </div>
 
  <div class="question">
@@ -92,7 +123,7 @@
    <label><input type="radio" value="2" name="six">Somewhat Disagree</label>
    <label><input type="radio" value="3" name="six">Not Sure</label>
    <label><input type="radio" value="4" name="six">Strongly Agree</label>
-   <label><input type="radio" value="4" name="six">Strongly Disagree</label>
+   <label><input type="radio" value="5" name="six">Strongly Disagree</label>
   </div>
 
  <div class="question">
@@ -101,7 +132,7 @@
    <label><input type="radio" value="2" name="seven">Somewhat Disagree</label>
    <label><input type="radio" value="3" name="seven">Not Sure</label>
    <label><input type="radio" value="4" name="seven">Strongly Agree</label>
-   <label><input type="radio" value="4" name="seven">Strongly Disagree</label>
+   <label><input type="radio" value="5" name="seven">Strongly Disagree</label>
   </div>
 
  <div class="question">
@@ -110,7 +141,7 @@
    <label><input type="radio" value="2" name="eight">Somewhat Disagree</label>
    <label><input type="radio" value="3" name="eight">Not Sure</label>
    <label><input type="radio" value="4" name="eight">Strongly Agree</label>
-   <label><input type="radio" value="4" name="eight">Strongly Disagree</label>
+   <label><input type="radio" value="5" name="eight">Strongly Disagree</label>
   </div>
 
   <div class="question">
@@ -119,7 +150,7 @@
    <label><input type="radio" value="2" name="nine">Somewhat Disagree</label>
    <label><input type="radio" value="3" name="nine">Not Sure</label>
    <label><input type="radio" value="4" name="nine">Strongly Agree</label>
-   <label><input type="radio" value="4" name="nine">Strongly Disagree</label>
+   <label><input type="radio" value="5" name="nine">Strongly Disagree</label>
   </div>
 
   <div class="question">
@@ -128,13 +159,32 @@
    <label><input type="radio" value="2" name="ten">Somewhat Disagree</label>
    <label><input type="radio" value="3" name="ten">Not Sure</label>
    <label><input type="radio" value="4" name="ten">Strongly Agree</label>
-   <label><input type="radio" value="4" name="ten">Strongly Disagree</label>
-  </div>
+   <label><input type="radio" value="5" name="ten">Strongly Disagree</label>
+  </div> -->
 
    <br>
    <br>
 
-   <button type="submit" class="btn btn-primary btn-lg" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i> Submit</button>
+   <button type="submit" class="btn btn-primary btn-lg" id="submit"><i class="fa fa-check-circle" aria-hidden="true" data-toggle="modal" data-target="#myModal"></i> Submit</button>
+
+    <!-- Modal pop up that appears after the form is submitted -->
+    <div id="myModal" class="modal fade text-center" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Your closest match is:</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <p>Darren Hayes<p>
+            <img src="https://i.kinja-img.com/gawker-media/image/upload/s--z_ixzRks--/c_scale,f_auto,fl_progressive,q_80,w_800/ycaueu8wlamze4xshosv.jpg">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
    <br>
    <br>
@@ -148,5 +198,56 @@
 
 </form>
 </div>
+
+<script type="text/javascript">
+
+    // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
+    // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
+    // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
+    // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
+
+    $("#submit").on("click", function(event) {
+      event.preventDefault();
+
+      // Here we grab the form elements
+      var newFriend = {
+        Name: $("#name").val().trim(),
+        Photo: $("#photo").val().trim(),
+        Scores: [
+         parseInt($("input[name=one]:checked").val()), 
+         parseInt($("input[name=two]:checked").val()), 
+         parseInt($("input[name=three]:checked").val())
+        ]
+      };
+
+      console.log(newFriend);
+
+      // This line is the magic. It"s very similar to the standard ajax function we used.
+      // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
+      // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
+      // depending on if a tables is available or not.
+
+      $.post("/api/friends", newFriend,
+        function(data) {
+
+          // when data is submitted, print a pop-up success window
+          if (data) {
+            $('#myModal').modal('show');
+          }
+
+          // If a table is available... tell user they on the waiting list.
+          else {
+            $('#myModal').modal({ show: false})
+            alert("Sorry an error occured, please try again!");
+          }
+
+          // Clear the form after submitting
+          $("form").get(0).reset();
+
+        });
+    });
+
+</script>
+
 </body>
 </html>
