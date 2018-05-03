@@ -99,7 +99,7 @@
    <label><input type="radio" value="5" name="three">Strongly Disagree</label>
   </div>
     
- <!-- <div class="question">
+ <div class="question">
   <h4>4) You feel like you can click with pretty much anyone</h4>
    <label><input type="radio" value="1" name="four">Strongly Disagree</label>
    <label><input type="radio" value="2" name="four">Somewhat Disagree</label>
@@ -160,7 +160,7 @@
    <label><input type="radio" value="3" name="ten">Not Sure</label>
    <label><input type="radio" value="4" name="ten">Strongly Agree</label>
    <label><input type="radio" value="5" name="ten">Strongly Disagree</label>
-  </div> -->
+  </div>
 
    <br>
    <br>
@@ -176,8 +176,6 @@
             <button type="button" class="close" data-dismiss="modal">&times;</button>
           </div>
           <div class="modal-body">
-            <p>Darren Hayes<p>
-            <img src="https://i.kinja-img.com/gawker-media/image/upload/s--z_ixzRks--/c_scale,f_auto,fl_progressive,q_80,w_800/ycaueu8wlamze4xshosv.jpg">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -201,32 +199,60 @@
 
 <script type="text/javascript">
 
-    // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
-    // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
-    // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
-    // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
+function FindClosestFriend(newFriend) {
+  
+  var newFriendScores = newFriend.Scores;
+  var currentURL = window.location.origin;
 
-    $("#submit").on("click", function(event) {
-      event.preventDefault();
+  $.ajax({ url: currentURL + "/api/friends", method: "GET" })
+    .then(function(friends) {
+      var closestFriendIndex = 0;
+      var closestFriendDiff = 100;
+      for (var i = 0; i < parseInt(friends.length); i++) {
 
-      // Here we grab the form elements
-      var newFriend = {
+         var currentFriend = friends[i].scores;
+         var currentFriendDiff = 0;
+
+         for (var k = 0; k < parseInt(currentFriend.length); k++) {
+            currentFriendDiff += Math.abs(currentFriend[k] - newFriendScores[k]);
+          }
+          if(currentFriendDiff < closestFriendDiff) {
+            closestFriendDiff = currentFriendDiff;
+            closestFriendIndex = i;
+          }
+      //grab current users answer array
+      //if arrays subtracted and the number is the lowest, print that user
+
+       }
+       var closestFriend = friends[closestFriendIndex];
+       $('.modal-body').empty().append('<p>' + closestFriend.name + '</p>' + 
+                            '<img src="' + closestFriend.photo + '">');
+    });
+}
+
+
+$("#submit").on("click", function(event) {
+  event.preventDefault();
+
+        var newFriend = {
         Name: $("#name").val().trim(),
         Photo: $("#photo").val().trim(),
         Scores: [
          parseInt($("input[name=one]:checked").val()), 
          parseInt($("input[name=two]:checked").val()), 
-         parseInt($("input[name=three]:checked").val())
+         parseInt($("input[name=three]:checked").val()),
+         parseInt($("input[name=four]:checked").val()),
+         parseInt($("input[name=five]:checked").val()),
+         parseInt($("input[name=six]:checked").val()),
+         parseInt($("input[name=seven]:checked").val()),
+         parseInt($("input[name=eight]:checked").val()),
+         parseInt($("input[name=nine]:checked").val()),
+         parseInt($("input[name=ten]:checked").val()),
         ]
       };
+      FindClosestFriend(newFriend);
 
-      console.log(newFriend);
-
-      // This line is the magic. It"s very similar to the standard ajax function we used.
-      // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-      // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-      // depending on if a tables is available or not.
-
+      // Post user input on the server
       $.post("/api/friends", newFriend,
         function(data) {
 
@@ -244,8 +270,9 @@
           // Clear the form after submitting
           $("form").get(0).reset();
 
-        });
-    });
+
+  });
+});
 
 </script>
 

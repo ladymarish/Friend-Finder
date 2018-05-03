@@ -1,22 +1,18 @@
 // LOAD DATA
-
-
 var friendsData = require("../data/friends");
 
 
 // ROUTING
 module.exports = function(app) {
 
-  // URL where all the JSON data is shown
+  // API GET Requests
   app.get("/api/friends", function(req, res) {
-    res.json(friendsArray);
+     res.json(friendsData);
   });
 
-  //User submits get posted to the server
+  // API POST Requests
   app.post("/api/friends", function(req, res) {
-
-      friendsArray.push(req.body);
       res.json(true);
-
   });
+
 };
